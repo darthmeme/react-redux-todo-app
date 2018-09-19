@@ -7,7 +7,13 @@ let input
 let AddTodo = ({ dispatch }) => (
   <div>
     <input ref={node => input = node} />
-    <button onClick={() => dispatch(addTodo(input.value))}>Add</button>
+    <button onClick={() => {
+      if (input.value) {
+        dispatch(addTodo(input.value))
+      }
+
+      input.value = ''
+    }}>Add</button>
   </div>
 )
 
