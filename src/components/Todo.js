@@ -1,12 +1,19 @@
 import React from 'react'
 
-export default ({ todo, onClick }) => (
-  <div
-    className={todo.completed ? 'todo completed' : 'todo'}
-    onClick={onClick}>
-    <div className="checkbox">
-      <div className="inner"></div>
-    </div>
-    <div className="item">{ todo.todo }</div>
-  </div>
-)
+export default ({ todo, onClick, submitNewText }) => {
+  let input
+
+  return (
+      <div
+        className={todo.completed ? 'todo completed' : 'todo'}>
+        <div className="checkbox" onClick={onClick}>
+          <div className="inner"></div>
+        </div>
+        <input
+          ref={node => input = node}
+          className="item"
+          value={todo.todo}
+          onChange={() => submitNewText({ id: todo.id, text: input.value })} />
+      </div>
+    )
+  }

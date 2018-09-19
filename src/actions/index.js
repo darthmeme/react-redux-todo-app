@@ -14,6 +14,11 @@ export const toggleTodo = id => ({
   payload: id
 })
 
+export const modifyTodo = data => ({
+  type: 'MODIFY_TODO',
+  payload: data
+})
+
 export const changeFilter = filter => ({
   type: 'CHANGE_FILTER',
   payload: filter

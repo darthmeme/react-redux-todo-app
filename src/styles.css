@@ -21,12 +21,22 @@
   padding: 15px;
   box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
+  position: relative;
 }
 
 .title {
   font-size: 2em;
   color: #fff;
   margin-bottom: 3px;
+}
+
+.add {
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .filters {
@@ -57,7 +67,6 @@
   display: flex;
   align-items: center;
   border-bottom: 1px dashed #96B8Ef;
-  cursor: pointer;
   transition: opacity 0.3s ease;
 }
 
@@ -76,6 +85,7 @@
   border-radius: 50%;
   margin-right: 5px;
   padding: 3px;
+  cursor: pointer;
 }
 
 .todo.completed .checkbox .inner {
@@ -89,4 +99,11 @@
   font-size: 14px;
   color: #576d8c;
   font-weight: 500;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.todo.completed .item {
+  pointer-events: none;
 }

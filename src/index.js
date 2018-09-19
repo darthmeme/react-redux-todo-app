@@ -5,7 +5,11 @@ import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers/index'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
+
+library.add(faPlusCircle)
 
 const store = createStore(
   rootReducer,

@@ -21,6 +21,12 @@ export default (state = initialState, action) => {
           ? { ...todo, completed: !todo.completed }
           : todo
       )
+    case 'MODIFY_TODO':
+      return state.map(todo => 
+        todo.id === action.payload.id
+          ? { ...todo, todo: action.payload.newText }
+          : todo
+      )
     default:
       return state
   }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import TodoList from '../TodoList'
-import { toggleTodo } from '../../actions/index'
+import { toggleTodo, modifyTodo } from '../../actions/index'
 
 const filteredTodods = (todos, filter) => {
   if (filter === 'TODO') {
@@ -19,7 +19,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onTodoClick: id => dispatch(toggleTodo(id))
+  onTodoClick: id => dispatch(toggleTodo(id)),
+  submitNewText: data => dispatch(modifyTodo({ id: data.id, newText: data.text }))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
